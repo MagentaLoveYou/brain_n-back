@@ -12,13 +12,19 @@ $(document).ready(function() {
     var counter = 0;
     var repeat = true;
     var start_flag = true;
-    var sync = 0;
 
     function displayRandomItem() {
-        sync ++;
-        var randomIndex = Math.floor(Math.random() * items.length);
-        var text = items[randomIndex];
-        previous.push(items[randomIndex]);
+        var percentage = [];
+        for (let i = 0; i <= 8; i++) {
+          var randomIndex = Math.floor(Math.random() * items.length);
+          percentage.push(items[randomIndex])
+        };
+        if (previous.length > 0) {
+          percentage.push(previous[previous.length - (level + 1)])
+        }
+        rndm =  Math.floor(Math.random() * percentage.length)
+        var text = percentage[rndm];
+        previous.push(text);
         var count = 0;
         $("#prompt").text('');
         function character(start, end, text) {
