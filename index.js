@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var items = ['PASSION', 'ETERNITY', 'LIBERTY'] //'TRANQUILITY', 'DESTINY', 'FANTASTIC']; 
+    var items = ['PASSION', 'ETERNITY', 'LIBERTY', 'TRANQUILITY', 'DESTINY', 'FANTASTIC']; 
     var previous = [];
     var correct = 0;
     var incorrect = 0;
@@ -39,7 +39,7 @@ $(document).ready(function() {
             clck--;
         };
         counter++;
-        if (counter >= 2 + level*2) {
+        if (counter >= 20 + level*2) {
           clearInterval(intervalId);
           $("#prompt").text('');
           $("#prompt").text('Nice!');
