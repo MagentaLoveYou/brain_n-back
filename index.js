@@ -44,7 +44,7 @@ $(document).ready(function() {
         type();
         flag = true;
         //delay(2000)
-        setTimeout(delay, 10, 2000)
+        setTimeout(delay, 2000)
         if (previous[previous.length - (level + 1)] === previous[previous.length - 1] && repeat === true )  {
           incorrect++;
           $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
