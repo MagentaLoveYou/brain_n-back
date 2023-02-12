@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var items = ['PASSION'] //'ETERNITY', 'LIBERTY'] //'TRANQUILITY', 'DESTINY', 'FANTASTIC']; 
+    var items = ['PASSION', 'ETERNITY', 'LIBERTY', 'TRANQUILITY', 'DESTINY', 'FANTASTIC']; 
     var previous = [];
     var correct = 0;
     var incorrect = 0;
@@ -16,24 +16,25 @@ $(document).ready(function() {
 
     function displayRandomItem() {
         var percentage = [];
+        if (counter <= 2 + level * 2 ) {
         for (let i =0; i<=2; i++) {
           var randomIndex = Math.floor(Math.random() * items.length);
-          percentage.push(items[randomIndex])
+          percentage.push(items[randomIndex]);
         };
         if (previous.length > 0) {
-          percentage.push(previous[previous.length - (level + 1)])
-        }
+          percentage.push(previous[previous.length - (level + 1)]);
+        };
 
-        rndm =  Math.floor(Math.random() * percentage.length)
+        rndm =  Math.floor(Math.random() * percentage.length);
         var text = percentage[rndm];
         previous.push(text);
         var count = 0;
         // $("#prompt").text('');
         function character(start, end, text) {
-          return text.substring(start, end)
+          return text.substring(start, end);
         };
         function type() {
-          var rnd = 20;
+          var rnd = 10;
           setTimeout(type, rnd);
           $("#prompt").append(character(count, count+1, text));
           count++;
@@ -48,25 +49,31 @@ $(document).ready(function() {
         } else {
             clck--;
         };
-        repeat = true
+        repeat = true;
         counter++;
-        if (counter >= 20 + level*2) {
+      } else {
           clearInterval(intervalId);
-          $("#prompt").text('');
-          $("#prompt").text('');
-          $("#prompt").text('Nice!');
-          perc = correct / ((correct + incorrect) / 100)
-          text_result = ('Score: ' + String(perc))
-          $("#prompt").text(text_result);
+          $("#prompt").text("");
+          var perc = correct / ((correct + incorrect) / 100);
+          var text_result = ('Score: ' + String(perc).substring(0, 4) + '%');
+          $("#percent").text(text_result);
           counter = 0;
-        };
+      };
+        // if ( counter === 1 + level * 2 ) {
+        //   clearInterval(intervalId);
+        //   $("#prompt").text("");
+        //   var perc = correct / ((correct + incorrect) / 100);
+        //   var text_result = ('Score: ' + String(perc).substring(0, 4));
+        //   $("#score").text(text_result);
+        //   counter = 0;
+        // };
     };
 
     function check() {
          if (previous[previous.length - (level + 1)] === previous[previous.length - 1]) {
            correct++;
          } else {
-           incorrect++
+           incorrect++;
          };
          if (clck === 0) {
            clck++;
