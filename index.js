@@ -15,7 +15,7 @@ $(document).ready(function() {
 
     function displayRandomItem() {
         var percentage = [];
-        for (let i = 0; i <= 8; i++) {
+        for (let i = 0; i <= 7; i++) {
           var randomIndex = Math.floor(Math.random() * items.length);
           percentage.push(items[randomIndex])
         };
