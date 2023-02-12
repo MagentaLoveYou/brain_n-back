@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var items = ['PASSION', 'ETERNITY', 'LIBERTY', 'TRANQUILITY', 'DESTINY', 'FANTASTIC', 'DESTROY', 'MALEDICT', 'REFRESHER', 'TARRASQUE']; 
+    var items = ['PASSION'] //'ETERNITY', 'LIBERTY'] //'TRANQUILITY', 'DESTINY', 'FANTASTIC']; 
     var previous = [];
     var correct = 0;
     var incorrect = 0;
@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     function displayRandomItem() {
         var percentage = [];
-        for (let i =0; i<=7; i++) {
+        for (let i =0; i<=2; i++) {
           var randomIndex = Math.floor(Math.random() * items.length);
           percentage.push(items[randomIndex])
         };
@@ -53,7 +53,11 @@ $(document).ready(function() {
         if (counter >= 20 + level*2) {
           clearInterval(intervalId);
           $("#prompt").text('');
+          $("#prompt").text('');
           $("#prompt").text('Nice!');
+          perc = correct / ((correct + incorrect) / 100)
+          text_result = ('Score: ' + String(perc))
+          $("#prompt").text(text_result);
           counter = 0;
         };
     };
