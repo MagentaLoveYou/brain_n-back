@@ -16,6 +16,7 @@ $(document).ready(function() {
 
     function displayRandomItem() {
         var percentage = [];
+        
         if (counter <= 20 + level * 2 ) {
         for (let i =0; i<=2; i++) {
           var randomIndex = Math.floor(Math.random() * items.length);
@@ -24,7 +25,7 @@ $(document).ready(function() {
         if (previous.length > 0) {
           percentage.push(previous[previous.length - (level + 1)]);
         };
-
+        $("#prompt").text('');
         rndm =  Math.floor(Math.random() * percentage.length);
         var text = percentage[rndm];
         previous.push(text);
@@ -39,7 +40,7 @@ $(document).ready(function() {
           $("#prompt").append(character(count, count+1, text));
           count++;
         }
-        $("#prompt").text('');
+        //$("#prompt").text('');
         type();
         flag = true;
         delay(2000)
@@ -112,6 +113,7 @@ $(document).ready(function() {
       correct = 0;
       incorrect = 0;
       $("#prompt").text("");
+      $("#percent").text("");
       $("#score").text("Correct: 0 Incorrect: 0");
       start_flag = true;
     });
