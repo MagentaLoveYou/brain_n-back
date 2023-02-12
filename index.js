@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var items = ['PASSION', 'ETERNITY', 'LIBERTY', 'TRANQUILITY', 'DESTINY', 'FANTASTIC']; 
+    var items = ['PASSION', 'ETERNITY', 'LIBERTY', 'TRANQUILITY', 'DESTINY', 'FANTASTIC', 'DESTROY', 'MALEDICT', 'REFRESHER', 'TARRASQUE']; 
     var previous = [];
     var correct = 0;
     var incorrect = 0;
@@ -12,21 +12,23 @@ $(document).ready(function() {
     var counter = 0;
     var repeat = true;
     var start_flag = true;
+    var sync = 0;
 
     function displayRandomItem() {
         var percentage = [];
-        for (let i = 0; i <= 7; i++) {
+        for (let i =0; i<=7; i++) {
           var randomIndex = Math.floor(Math.random() * items.length);
           percentage.push(items[randomIndex])
         };
         if (previous.length > 0) {
           percentage.push(previous[previous.length - (level + 1)])
         }
+
         rndm =  Math.floor(Math.random() * percentage.length)
         var text = percentage[rndm];
         previous.push(text);
         var count = 0;
-        $("#prompt").text('');
+        // $("#prompt").text('');
         function character(start, end, text) {
           return text.substring(start, end)
         };
@@ -36,14 +38,17 @@ $(document).ready(function() {
           $("#prompt").append(character(count, count+1, text));
           count++;
         }
+        $("#prompt").text('');
         type();
         flag = true;
-        if (previous[previous.length - (level + 1)] === previous[previous.length - 1] && repeat === true && clck === 0 )  {
+        delay(2000)
+        if (previous[previous.length - (level + 1)] === previous[previous.length - 1] && repeat === true )  {
           incorrect++;
           $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
         } else {
             clck--;
         };
+        repeat = true
         counter++;
         if (counter >= 20 + level*2) {
           clearInterval(intervalId);
