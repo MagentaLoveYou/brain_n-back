@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     function displayRandomItem() {
         var percentage = [];
-        if (counter <= 2 + level * 2 ) {
+        if (counter <= 20 + level * 2 ) {
         for (let i =0; i<=2; i++) {
           var randomIndex = Math.floor(Math.random() * items.length);
           percentage.push(items[randomIndex]);
@@ -34,7 +34,7 @@ $(document).ready(function() {
           return text.substring(start, end);
         };
         function type() {
-          var rnd = 10;
+          var rnd = 20;
           setTimeout(type, rnd);
           $("#prompt").append(character(count, count+1, text));
           count++;
