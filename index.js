@@ -33,7 +33,7 @@ $(document).ready(function() {
           return text.substring(start, end)
         };
         function type() {
-          var rnd = 200;
+          var rnd = 20;
           setTimeout(type, rnd);
           $("#prompt").append(character(count, count+1, text));
           count++;
