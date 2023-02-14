@@ -12,11 +12,12 @@ $(document).ready(function() {
     var counter = 0;
     var repeat = true;
     var start_flag = true;
+    var repeat_repeat = true;
     var sync = 0;
 
     function displayRandomItem() {
         var percentage = [];
-        
+        repeat_repeat = false;
         if (counter <= 20 + level * 2 ) {
         for (let i =0; i<=2; i++) {
           var randomIndex = Math.floor(Math.random() * items.length);
@@ -50,6 +51,10 @@ $(document).ready(function() {
           $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
         } else {
             clck--;
+        };
+        if (repeat && repeat_repeat) {
+          incorrect--;
+          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
         };
         repeat = true;
         counter++;
