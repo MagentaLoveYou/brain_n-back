@@ -54,6 +54,7 @@ $(document).ready(function() {
           incorrect++;
           $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
           repeat_repeat = true;
+          proverka = false;
         } else {
             clck--;
         };
