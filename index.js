@@ -17,7 +17,6 @@ $(document).ready(function() {
     var proverka = true;
 
     function displayRandomItem() {
-        proverka = true;
         var percentage = [];
         repeat_repeat = false;
         if (counter <= 20 + level * 2 ) {
@@ -59,6 +58,7 @@ $(document).ready(function() {
             clck--;
         };
         repeat = true;
+        proverka = true;
         counter++;
             
       } else {
