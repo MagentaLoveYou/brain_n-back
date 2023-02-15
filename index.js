@@ -19,11 +19,12 @@ $(document).ready(function() {
         var percentage = [];
         repeat_repeat = false;
         if (counter <= 20 + level * 2 ) {
-        for (let i =0; i<=2; i++) {
+        for (let i = 0; i<=3; i++) {
           var randomIndex = Math.floor(Math.random() * items.length);
           percentage.push(items[randomIndex]);
         };
         if (previous.length > 0) {
+          percentage.push(previous[previous.length - (level + 1)]);
           percentage.push(previous[previous.length - (level + 1)]);
         };
         $("#prompt").text('');
