@@ -93,10 +93,10 @@ $(document).ready(function() {
          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
          flag = false;
         
-         if (repeat === false && proverka === false) {
-          incorrect--;
-          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
-        }
+//          if (repeat === false && proverka === false) {
+//           incorrect--;
+//           $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
+//         }
       };
    
   
