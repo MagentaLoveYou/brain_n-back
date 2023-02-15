@@ -101,6 +101,7 @@ $(document).ready(function() {
   
     $("#yes-button").click(function() {
       repeat = false;
+      repeat_repeat = true;
       if (flag) {
         if (clck === 0) {
           clck++
