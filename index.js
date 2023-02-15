@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var items = ['PASSION', 'ETERNITY', 'LIBERTY', 'TRANQUILITY', 'DESTINY', 'FANTASTIC']; 
+    var items = ['PASSION', 'ETERNITY', 'LIBERTY', 'TRANQUILITY', 'DESTINY', 'FANTASTIC', 'TARRASQUE', 'WARRUNNER', 'MORPHLING', 'MYSTIC']; 
     var previous = [];
     var correct = 0;
     var incorrect = 0;
