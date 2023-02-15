@@ -52,7 +52,7 @@ $(document).ready(function() {
         } else {
             clck--;
         };
-        if (repeat === false && repeat_repeat) {
+        if (repeat === false && repeat_repeat === true) {
           incorrect--;
           $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
         };
