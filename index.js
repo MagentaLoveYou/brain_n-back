@@ -50,12 +50,9 @@ $(document).ready(function() {
         if (previous[previous.length - (level + 1)] === previous[previous.length - 1] && repeat === true )  {
           incorrect++;
           $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
+          repeat_repeat = true;
         } else {
             clck--;
-        };
-        if (repeat === false && repeat_repeat === true) {
-          incorrect--;
-          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
         };
         repeat = true;
         counter++;
@@ -90,6 +87,11 @@ $(document).ready(function() {
          };
          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
          flag = false;
+        
+         if (repeat === false && repeat_repeat === true) {
+          incorrect--;
+          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
+        };
       };
    
   
