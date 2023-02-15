@@ -14,14 +14,17 @@ $(document).ready(function() {
     var start_flag = true;
     var repeat_repeat = true;
     var sync = 0;
+    var proverka = true;
 
     function displayRandomItem() {
+        proverka = true;
         var percentage = [];
         repeat_repeat = false;
         if (counter <= 20 + level * 2 ) {
         for (let i = 0; i<=3; i++) {
           var randomIndex = Math.floor(Math.random() * items.length);
           percentage.push(items[randomIndex]);
+          percentage.push(previous[previous.length - (level + 1)]);
         };
         if (previous.length > 0) {
           percentage.push(previous[previous.length - (level + 1)]);
@@ -56,6 +59,7 @@ $(document).ready(function() {
         };
         repeat = true;
         counter++;
+            
       } else {
           clearInterval(intervalId);
           $("#prompt").text("");
@@ -88,10 +92,10 @@ $(document).ready(function() {
          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
          flag = false;
         
-         if (repeat === false && repeat_repeat === true) {
+         if (repeat === false && proverka === false) {
           incorrect--;
           $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
-        };
+        }
       };
    
   
