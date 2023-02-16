@@ -17,13 +17,13 @@
     var proverka = true;
 
     function displayRandomItem() {
-        if (previous[previous.length - (level + 2)] === previous[previous.length - 2] && repeat === true )  {
-          incorrect++;
-          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
-          repeat_repeat = true;
-          proverka = false;
-        } else {
-            clck--;
+        //if (previous[previous.length - (level + 2)] === previous[previous.length - 2] && repeat === true )  {
+          //incorrect++;
+        //  $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
+          //repeat_repeat = true;
+         // proverka = false;
+       // } else {
+           // clck--;
         };    
         var percentage = [];
         flag = true; 
