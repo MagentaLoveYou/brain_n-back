@@ -31,7 +31,7 @@
           percentage.push(previous[previous.length - (level + 1)]);
           percentage.push(previous[previous.length - (level + 1)]);
         };
-        $("#prompt").text('');
+        //$("#prompt").text('');1
         rndm =  Math.floor(Math.random() * percentage.length);
         var text = percentage[rndm];
         previous.push(text);
@@ -62,6 +62,7 @@
         repeat = true;
         proverka = true;
         counter++;
+        $("#prompt").text('')
             
       } else {
           clearInterval(intervalId);
