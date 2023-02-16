@@ -18,6 +18,7 @@ $(document).ready(function() {
 
     function displayRandomItem() {
         var percentage = [];
+        flag = true; 
         repeat_repeat = false;
         if (counter <= 20 + level * 2 ) {
         for (let i = 0; i<=3; i++) {
@@ -46,7 +47,7 @@ $(document).ready(function() {
         }
         //$("#prompt").text('');
         type();
-        flag = true;
+
         //delay(2000)
         setTimeout(delay, 1500)
         if (previous[previous.length - (level + 1)] === previous[previous.length - 1] && repeat === true )  {
