@@ -24,7 +24,7 @@
          // proverka = false;
        // } else {
            // clck--;
-        };    
+        //};    
         var percentage = [];
         flag = true; 
         repeat_repeat = false;
