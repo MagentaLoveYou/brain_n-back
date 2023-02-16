@@ -1,4 +1,4 @@
-$(document).ready(function() {
+8$(document).ready(function() {
     var items = ['PASSION', 'ETERNITY', 'LIBERTY', 'TRANQUILITY', 'DESTINY', 'FANTASTIC', 'TARRASQUE', 'WARRUNNER', 'MORPHLING', 'MYSTIC']; 
     var previous = [];
     var correct = 0;
@@ -49,8 +49,8 @@ $(document).ready(function() {
         //$("#prompt").text('');
         type();
 
-        //delay(2000)
-        setTimeout(delay, 2000)
+        delay(3000)
+        //setTimeout(delay, 3000)
         if (previous[previous.length - (level + 1)] === previous[previous.length - 1] && repeat === true )  {
           incorrect++;
           $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
