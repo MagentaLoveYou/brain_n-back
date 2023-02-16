@@ -29,6 +29,7 @@ $(document).ready(function() {
         if (previous.length > 0) {
           percentage.push(previous[previous.length - (level + 1)]);
           percentage.push(previous[previous.length - (level + 1)]);
+          percentage.push(previous[previous.length - (level + 1)]);
         };
         $("#prompt").text('');
         rndm =  Math.floor(Math.random() * percentage.length);
