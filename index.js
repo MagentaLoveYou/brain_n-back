@@ -1,4 +1,4 @@
-8$(document).ready(function() {
+$(document).ready(function() {
     var items = ['PASSION', 'ETERNITY', 'LIBERTY', 'TRANQUILITY', 'DESTINY', 'FANTASTIC', 'TARRASQUE', 'WARRUNNER', 'MORPHLING', 'MYSTIC']; 
     var previous = [];
     var correct = 0;
@@ -17,16 +17,7 @@
     var proverka = true;
 
     function displayRandomItem() {
-        //if (previous[previous.length - (level + 2)] === previous[previous.length - 2] && repeat === true )  {
-          //incorrect++;
-        //  $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
-          //repeat_repeat = true;
-         // proverka = false;
-       // } else {
-           // clck--;
-        //};    
         var percentage = [];
-        flag = true; 
         repeat_repeat = false;
         if (counter <= 20 + level * 2 ) {
         for (let i = 0; i<=3; i++) {
@@ -37,9 +28,8 @@
         if (previous.length > 0) {
           percentage.push(previous[previous.length - (level + 1)]);
           percentage.push(previous[previous.length - (level + 1)]);
-          percentage.push(previous[previous.length - (level + 1)]);
         };
-        //$("#prompt").text('');1
+        $("#prompt").text('');
         rndm =  Math.floor(Math.random() * percentage.length);
         var text = percentage[rndm];
         previous.push(text);
@@ -56,21 +46,20 @@
         }
         //$("#prompt").text('');
         type();
-
-        //delay(3000)
-        //setTimeout(delay, 3000)
-        //if (previous[previous.length - (level + 1)] === previous[previous.length - 1] && repeat === true )  {
-          //incorrect++;
-          //$("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
-          //repeat_repeat = true;
-          //proverka = false;
-       // } else {
-           // clck--;
-       // };
+        flag = true;
+        //delay(2000)
+        setTimeout(delay, 1500)
+        if (previous[previous.length - (level + 1)] === previous[previous.length - 1] && repeat === true )  {
+          incorrect++;
+          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
+          repeat_repeat = true;
+          proverka = false;
+        } else {
+            clck--;
+        };
         repeat = true;
         proverka = true;
         counter++;
-        $("#prompt").text('')
             
       } else {
           clearInterval(intervalId);
@@ -104,10 +93,10 @@
          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
          flag = false;
         
-//       if (repeat === false && proverka === false) {
+//          if (repeat === false && proverka === false) {
 //           incorrect--;
 //           $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
-//       }
+//         }
       };
    
   
